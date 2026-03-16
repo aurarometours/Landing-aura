@@ -2,57 +2,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aura Tours Rome | Luxury Private Golf Cart Experiences</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+<title>Aura Tours Rome | Luxury Golf Cart Experiences</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+
+:root{
+--gold:#d4af6a;
+--dark:#0c0c0c;
+--dark2:#141414;
+--light:#f4f4f4;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-font-family:Inter,sans-serif;
-background:#0e0e0e;
-color:#f5f5f5;
+font-family:Inter, sans-serif;
+background:var(--dark);
+color:var(--light);
 line-height:1.7;
 overflow-x:hidden;
 }
 
-h1,h2,h3,h4{
-font-family:'Playfair Display',serif;
-letter-spacing:.5px
+h1,h2,h3{
+font-family:'Playfair Display',serif
 }
 
 /* NAV */
+
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-padding:22px 8%;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-z-index:1000;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(6px)
+background:rgba(10,10,10,.45);
+backdrop-filter:blur(10px);
+z-index:1000
 }
 
 nav .logo{
 font-size:22px;
-letter-spacing:3px
+letter-spacing:3px;
+color:var(--gold)
 }
 
-nav a{
-color:#fff;
-text-decoration:none;
+nav .links a{
 margin-left:28px;
+text-decoration:none;
+color:#ddd;
 font-size:14px;
-opacity:.9
+transition:.3s
+}
+
+nav .links a:hover{
+color:var(--gold)
 }
 
 /* HERO */
+
 .hero{
 height:100vh;
 position:relative;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center
+text-align:center;
+padding:0 20px
 }
 
 .hero video{
@@ -60,6 +76,7 @@ position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
+filter:brightness(.6);
 z-index:-2
 }
 
@@ -67,95 +84,114 @@ z-index:-2
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.9));
+background:radial-gradient(circle at center, rgba(0,0,0,.2), rgba(0,0,0,.85));
 z-index:-1
 }
 
-.hero-content{
-max-width:900px;
-padding:20px
-}
-
 .hero h1{
-font-size:80px;
-margin-bottom:25px
+font-size:90px;
+margin-bottom:20px
 }
 
 .hero p{
 font-size:22px;
-opacity:.9;
-margin-bottom:35px
+max-width:700px;
+margin:auto;
+opacity:.9
+}
+
+.hero .cta{
+margin-top:40px
 }
 
 .btn{
-background:#c8a96a;
+background:var(--gold);
 padding:16px 38px;
 border-radius:40px;
 text-decoration:none;
-color:#fff;
-font-size:15px;
-letter-spacing:1px;
+color:black;
+font-weight:600;
+letter-spacing:.5px;
 transition:.3s
 }
 
 .btn:hover{
-background:#b89555
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,.4)
 }
 
-/* SECTIONS */
+/* SECTION */
+
 section{
 padding:120px 10%
 }
 
 .section-title{
-font-size:48px;
-margin-bottom:20px
+font-size:52px;
+margin-bottom:15px
 }
 
 .section-sub{
-max-width:720px;
-color:#cfcfcf;
+max-width:700px;
+color:#bfbfbf;
 margin-bottom:70px
 }
 
 /* EXPERIENCE */
+
 .features{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:35px
 }
 
 .feature{
-background:#161616;
-padding:40px;
-border-radius:16px;
+background:linear-gradient(145deg,#171717,#101010);
+padding:35px;
+border-radius:18px;
+position:relative;
+overflow:hidden;
 transition:.4s
+}
+
+.feature::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:18px;
+padding:1px;
+background:linear-gradient(120deg,transparent,var(--gold),transparent);
+-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+-webkit-mask-composite:xor;
+mask-composite:exclude
 }
 
 .feature:hover{
-transform:translateY(-8px);
-background:#1c1c1c
+transform:translateY(-6px)
 }
 
-.feature h3{margin-bottom:10px}
+.feature h3{
+margin-bottom:10px
+}
 
 /* TOURS */
+
 .tours{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:45px
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+gap:40px
 }
 
 .tour{
-background:#161616;
-border-radius:18px;
+background:var(--dark2);
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 20px 60px rgba(0,0,0,.6);
-transition:.4s
+transition:.4s;
+box-shadow:0 20px 60px rgba(0,0,0,.6)
 }
 
 .tour:hover{
-transform:scale(1.03)
+transform:translateY(-10px) scale(1.02)
 }
 
 .tour img{
@@ -165,188 +201,198 @@ object-fit:cover
 }
 
 .tour-content{
-padding:32px
+padding:30px
 }
 
 .tour h3{
 font-size:26px;
-margin-bottom:12px
+margin-bottom:10px
 }
 
 .stops{
-margin-top:15px;
 font-size:14px;
-line-height:1.6;
-opacity:.9
+line-height:1.7;
+color:#cfcfcf
 }
 
-/* PRICE */
+/* PRICING */
+
 .pricing{
-background:#111;
-text-align:center
+background:#080808
 }
 
 .price-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:35px;
 margin-top:50px
 }
 
 .price-card{
-background:#1b1b1b;
+background:linear-gradient(145deg,#191919,#101010);
 padding:40px;
-border-radius:14px
+border-radius:20px;
+text-align:center;
+position:relative
+}
+
+.price-card::after{
+content:"";
+position:absolute;
+inset:0;
+border-radius:20px;
+border:1px solid rgba(212,175,106,.3)
 }
 
 .price-card h3{
-font-size:22px;
 margin-bottom:10px
 }
 
 .price{
-font-size:34px;
-margin:10px 0;
-color:#c8a96a
+font-size:42px;
+color:var(--gold);
+margin:15px 0
 }
 
 /* DETAILS */
+
 .details{
-max-width:850px
+max-width:850px;
+font-size:16px
 }
 
-.details p{margin-bottom:18px;color:#d6d6d6}
+.details p{
+margin-bottom:18px;
+color:#cfcfcf
+}
 
 /* GALLERY */
+
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:18px
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-top:60px
 }
 
 .gallery img{
 width:100%;
-height:220px;
+height:200px;
 object-fit:cover;
-border-radius:10px
+border-radius:12px;
+transition:.4s
+}
+
+.gallery img:hover{
+transform:scale(1.05)
 }
 
 /* CONTACT */
+
 .contact{
 text-align:center
 }
 
-.contact p{margin:8px 0}
+.contact p{
+margin:8px 0
+}
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
+
 .whatsapp{
 position:fixed;
 bottom:25px;
 right:25px;
 background:#25D366;
-color:white;
-padding:14px 18px;
+padding:14px 20px;
 border-radius:40px;
 text-decoration:none;
+color:white;
 font-size:14px;
-box-shadow:0 8px 25px rgba(0,0,0,.4)
+box-shadow:0 10px 25px rgba(0,0,0,.5)
 }
 
 footer{
-background:#080808;
 text-align:center;
 padding:35px;
+background:#050505;
 font-size:14px;
 color:#aaa
 }
 
 @media(max-width:768px){
-.hero h1{font-size:44px}
+.hero h1{font-size:46px}
 .hero p{font-size:18px}
+.section-title{font-size:36px}
 }
 
 </style></head><body><nav>
 <div class="logo">AURA TOURS</div>
-<div>
+<div class="links">
+<a href="#experience">Experience</a>
 <a href="#tours">Tours</a>
-<a href="#prices">Prices</a>
-<a href="#details">Details</a>
+<a href="#pricing">Prices</a>
 <a href="#contact">Book</a>
 </div>
 </nav><section class="hero"><video autoplay muted loop playsinline>
 <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-the-colosseum-in-rome-1576/1080p.mp4" type="video/mp4">
-</video><div class="hero-content">
+</video><div>
 <h1>Aura Tours Rome</h1>
-<p>Private luxury golf cart experiences through the timeless streets of the Eternal City</p>
+<p>Private electric golf cart experiences through the timeless streets of the Eternal City</p>
+<div class="cta">
 <a class="btn" href="https://wa.me/393206891014">Book Your Private Tour</a>
-</div></section><section>
-<h2 class="section-title">The Experience</h2>
-<p class="section-sub">Discover Rome effortlessly while gliding through its historic streets in a private electric golf cart. Every tour combines iconic landmarks, hidden corners and panoramic viewpoints while your driver shares the stories and secrets of the Eternal City.</p><div class="features"><div class="feature">
+</div>
+</div></section><section id="experience"><h2 class="section-title">The Experience</h2>
+<p class="section-sub">Discover Rome effortlessly while gliding through the historic center in a private electric golf cart. Each journey combines iconic landmarks, hidden alleys and breathtaking viewpoints while your driver shares the stories and secrets of the Eternal City.</p><div class="features"><div class="feature">
 <h3>Private Tours</h3>
-<p>Every experience is completely private for the couple or group booking the tour.</p>
+<p>Each experience is reserved exclusively for your group.</p>
 </div><div class="feature">
-<h3>Effortless Exploration</h3>
-<p>Rome is vast and built on seven hills. Our golf carts allow you to see the city comfortably.</p>
+<h3>Comfort & Style</h3>
+<p>Explore Rome without exhausting walks while riding in elegant electric carts.</p>
 </div><div class="feature">
 <h3>Local Stories</h3>
-<p>Your driver will narrate the history, legends and curiosities of Rome during the ride.</p>
+<p>Your driver shares the history, legends and curiosities of Rome.</p>
 </div><div class="feature">
 <h3>Flexible Stops</h3>
-<p>Stops for photos, gelato, coffee or aperitivo can be included during the tour.</p>
-</div></div>
-</section><section id="tours">
-<h2 class="section-title">Signature Tours</h2><div class="tours"><div class="tour">
+<p>Stops for photos, gelato, coffee or aperitivo can be included.</p>
+</div></div></section><section id="tours"><h2 class="section-title">Signature Tours</h2><div class="tours"><div class="tour">
 <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee">
 <div class="tour-content">
 <h3>Rome Grand Masterpiece</h3>
-<p>Complete introduction to Rome's most famous monuments.</p>
-<div class="stops">
-Colosseum • Roman Forum • Piazza Venezia • Pantheon • Piazza Navona • Campo de' Fiori • Trevi Fountain • Spanish Steps • Ponte Sisto • Janiculum Terrace
-</div>
+<p>Complete introduction to Rome.</p>
+<div class="stops">Colosseum • Roman Forum • Piazza Venezia • Pantheon • Piazza Navona • Campo de' Fiori • Trevi Fountain • Spanish Steps • Ponte Sisto • Janiculum Terrace</div>
 </div>
 </div><div class="tour">
 <img src="https://images.unsplash.com/photo-1526481280691-3c4698d9c6b5">
 <div class="tour-content">
 <h3>Rome Essentials</h3>
-<p>The perfect highlights tour of the Eternal City.</p>
-<div class="stops">
-Colosseum • Piazza Venezia • Pantheon • Piazza Navona • Trevi Fountain • Spanish Steps • Castel Sant'Angelo • St Peter's Square
-</div>
+<p>The perfect highlights route.</p>
+<div class="stops">Colosseum • Piazza Venezia • Pantheon • Piazza Navona • Trevi Fountain • Spanish Steps • Castel Sant'Angelo • St Peter's Square</div>
 </div>
 </div><div class="tour">
 <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
 <div class="tour-content">
 <h3>Hidden Gems</h3>
-<p>Rome beyond the typical tourist routes.</p>
-<div class="stops">
-Orange Garden • Knights of Malta Square • Acqua Paola Fountain • Via Giulia • Mattei Square • Jewish Ghetto • Trastevere
+<p>Rome beyond the tourist routes.</p>
+<div class="stops">Orange Garden • Knights of Malta Square • Acqua Paola Fountain • Via Giulia • Mattei Square • Jewish Ghetto • Trastevere</div>
 </div>
-</div>
-</div></div>
-</section><section id="prices" class="pricing">
-<h2 class="section-title">Tour Pricing</h2><div class="price-grid"><div class="price-card">
+</div></div></section><section id="pricing" class="pricing"><h2 class="section-title">Tour Pricing</h2><div class="price-grid"><div class="price-card">
 <h3>1–3 Guests</h3>
 <div class="price">€250</div>
-<p>2.5 hour private tour</p>
+<p>2.5 Hour Private Tour</p>
 </div><div class="price-card">
 <h3>4 Guests</h3>
 <div class="price">€300</div>
-<p>2.5 hour private tour</p>
+<p>2.5 Hour Private Tour</p>
 </div><div class="price-card">
 <h3>5–7 Guests</h3>
 <div class="price">€390</div>
-<p>2.5 hour private tour</p>
-</div></div></section><section id="details">
-<h2 class="section-title">Tour Details</h2><div class="details"><p>The price includes the rental of an elegant golf cart (Alba or Melex for larger groups), a professional driver, fresh water and wipes on board.</p><p>Tours normally last about 2.5 hours and include multiple stops of around 10–15 minutes each.</p><p>It is possible to start directly from the hotel or another meeting point in the city centre.</p><p>Routes and duration can be customized according to guest preferences.</p><p>Museum or monument entrance tickets are not included.</p><p>Payment can be made in cash, credit card (+10%), PayPal, Revolut or instant bank transfer.</p></div>
-</section><section id="contact" class="contact">
-<h2 class="section-title">Booking</h2>
-<p>Website: aurabeta0.github.io/AuraTours</p>
+<p>2.5 Hour Private Tour</p>
+</div></div></section><section id="details"><h2 class="section-title">Tour Details</h2><div class="details"><p>The price includes an elegant golf cart (Alba or Melex for larger groups), a professional driver, fresh water and wipes on board.</p><p>Tours normally last around 2.5 hours with multiple stops of about 10–15 minutes.</p><p>Start directly from the hotel or a meeting point in the city centre.</p><p>Routes and duration can be customized depending on guest preferences.</p><p>Museum or monument entrance tickets are not included.</p><p>Payment methods: cash, credit card (+10%), PayPal, Revolut or instant bank transfer.</p></div></section><section id="contact" class="contact"><h2 class="section-title">Booking</h2><p>Website: aurabeta0.github.io/AuraTours</p>
 <p>WhatsApp: +39 320 689 1014</p>
-<p>Email: aura.intravel@gmail.com</p>
-<a class="btn" href="https://wa.me/393206891014">Book on WhatsApp</a>
+<p>Email: aura.intravel@gmail.com</p><br><a class="btn" href="https://wa.me/393206891014">Book on WhatsApp</a>
+
 </section><a class="whatsapp" href="https://wa.me/393206891014">WhatsApp</a>
 
-<footer>
-<p>© Aura Tours Rome — Private Golf Cart Experiences</p>
-</footer></body>
+<footer><p>© Aura Tours Rome — Private Golf Cart Experiences</p></footer></body>
 </html>
