@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aura Roma Tours — Golf Cart Experience ★ 4.9/5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C5A55A;--gold-light:#DFC580;--gold-shimmer:linear-gradient(135deg,#B8933E 0%,#E8D5A0 40%,#C5A55A 60%,#A07830 100%);--bg:#0A0908;--bg-card:#111010;--bg-el:#1A1814;--text:#F2EDE4;--text-m:#8A8478;--text-d:#5A564E;--bdr:rgba(197,165,90,.08);--bdr-g:rgba(197,165,90,.25);--red:#D4443B;--grn:#3DB954;--wa:#25D366}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden}
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+body::before{content:'';position:fixed;inset:0;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:9998}
+.toast{position:fixed;bottom:90px;left:20px;z-index:997;background:var(--bg-el);border:1px solid var(--bdr-g);border-radius:14px;padding:.7rem 1rem;display:flex;align-items:center;gap:.6rem;max-width:340px;box-shadow:0 12px 45px rgba(0,0,0,.6);transform:translateX(-120%);transition:transform .6s cubic-bezier(.23,1,.32,1);opacity:0}
+.toast.show{transform:translateX(0);opacity:1}
+.toast-a{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:.62rem;flex-shrink:0;font-weight:700;color:var(--bg)}
+.toast-b{font-size:.66rem;line-height:1.4;color:var(--text-m)}.toast-b strong{color:var(--gold-light);font-weight:500}
+.toast-t{color:var(--text-d);font-size:.54rem;margin-top:.1rem}
+.lb{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:center;align-items:center;gap:.28rem;padding:.42rem .8rem;background:rgba(10,9,8,.96);backdrop-filter:blur(24px);border-bottom:1px solid var(--bdr)}
+.lb button{background:0;border:1px solid transparent;border-radius:6px;cursor:pointer;padding:.15rem .32rem;display:flex;align-items:center;gap:.18rem;font-family:'Outfit',sans-serif;font-size:.56rem;font-weight:400;color:var(--text-d);letter-spacing:.05em;transition:all .3s}
+.lb button:hover,.lb button.active{color:var(--gold);border-color:var(--bdr-g);background:rgba(197,165,90,.04)}
+.lb .fl{font-size:.9rem;line-height:1}
+.urg{margin-top:58px;background:linear-gradient(90deg,#a82820,var(--red),#a82820);text-align:center;padding:.55rem 1rem;font-size:.72rem;font-weight:600;letter-spacing:.04em;color:#fff;position:relative;overflow:hidden;z-index:999}
+.urg::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);animation:us 2.5s ease infinite}
+@keyframes us{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.pd{display:inline-block;width:6px;height:6px;background:#fff;border-radius:50%;margin-right:.3rem;vertical-align:middle;animation:p 1.5s ease infinite}
+@keyframes p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.4)}}
+.hero{position:relative;min-height:95vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:1}.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.25) saturate(.5);animation:hz 25s ease infinite alternate}
+@keyframes hz{0%{transform:scale(1)}100%{transform:scale(1.1)}}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,8,.1) 0%,rgba(10,9,8,.4) 30%,rgba(10,9,8,.82) 68%,var(--bg) 100%);z-index:2}
+.hc{position:relative;z-index:3;text-align:center;max-width:820px;padding:2rem 1.5rem}
+.hbr{font-weight:600;font-size:.44rem;letter-spacing:.8em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;opacity:.6;animation:fu 1s .2s ease both}
+.hln{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:2rem;animation:fu 1s .3s ease both}
+.hln::before,.hln::after{content:'';width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));opacity:.25}
+.hln::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.hln span{font-weight:400;font-size:.52rem;letter-spacing:.6em;text-transform:uppercase;color:var(--gold)}
+.hc h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.5rem,7vw,5rem);letter-spacing:-.03em;line-height:1.04;margin-bottom:1.2rem;animation:fu 1s .4s ease both}
+.hc h1 em{font-style:italic;color:var(--gold-light)}
+.hc>p{color:var(--text-m);font-size:.86rem;line-height:1.75;max-width:510px;margin:0 auto 2.4rem;animation:fu 1s .5s ease both}
+.hcw{animation:fu 1s .6s ease both;display:flex;flex-direction:column;align-items:center;gap:1rem}
+.hm{display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap;justify-content:center;animation:fu 1s .75s ease both}
+.hs{font-size:.68rem;color:var(--text-m)}.hs span{color:var(--gold);letter-spacing:2px}
+.hlv{font-size:.64rem;color:var(--red);font-weight:500;display:flex;align-items:center;gap:.3rem}
+.hlv::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%;animation:p 1.5s ease infinite}
+.wb{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2.5rem;border-radius:14px;border:none;background:var(--wa);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.84rem;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;text-decoration:none;box-shadow:0 6px 35px rgba(37,211,102,.35);transition:all .4s;position:relative;overflow:hidden}
+.wb::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:translateX(-100%);transition:transform .6s}
+.wb:hover::after{transform:translateX(100%)}
+.wb:hover{box-shadow:0 10px 50px rgba(37,211,102,.55);transform:translateY(-3px) scale(1.02)}
+.tr{padding:1.4rem 1.5rem;border-bottom:1px solid var(--bdr);text-align:center;position:relative;z-index:2}
+.tr p{font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:var(--text-d);margin-bottom:.65rem}
+.trl{display:flex;justify-content:center;gap:2rem;align-items:center;flex-wrap:wrap;opacity:.4}
+.trl span{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-weight:600;color:var(--text-d)}
+.sp{padding:2.4rem 1.5rem;text-align:center;position:relative;z-index:2}
+.spr{display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap}
+.spi{display:flex;flex-direction:column;align-items:center;gap:.2rem}
+.spn{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold-light)}
+.spl{font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-d)}
+.gl{padding:1.6rem 0;overflow:hidden;position:relative;z-index:2}
+.glt{display:flex;gap:.35rem;animation:sg 40s linear infinite;width:max-content}
+.glt img{height:240px;border-radius:14px;object-fit:cover;filter:brightness(.58) saturate(.7);transition:all .6s}
+.glt img:hover{filter:brightness(.88) saturate(1);transform:scale(1.04)}
+@keyframes sg{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.sc{padding:4.5rem 1.5rem;max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.st{text-align:center;margin-bottom:3rem}
+.st h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.7rem,4.5vw,2.8rem);line-height:1.1}
+.st h2 em{font-style:italic;color:var(--gold-light)}
+.st p{margin-top:.7rem;color:var(--text-m);font-size:.82rem;line-height:1.65;max-width:500px;margin-left:auto;margin-right:auto}
+.cds{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;align-items:start}
+.cd{position:relative;background:var(--bg-card);border:1px solid var(--bdr);border-radius:22px;display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.23,1,.32,1),border-color .4s,box-shadow .4s;overflow:hidden}
+.cd:hover{transform:translateY(-8px);border-color:rgba(197,165,90,.15)}
+.cd.f{background:var(--bg-el);border-color:var(--bdr-g);box-shadow:0 0 80px rgba(197,165,90,.06),0 0 0 1px rgba(197,165,90,.08);transform:scale(1.04)}
+.cd.f:hover{border-color:rgba(197,165,90,.4);box-shadow:0 0 100px rgba(197,165,90,.12),0 20px 60px rgba(0,0,0,.4);transform:scale(1.04) translateY(-8px)}
+.ci{position:relative;height:240px;overflow:hidden}
+.ci img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.23,1,.32,1),filter .5s;filter:brightness(.65) saturate(.75)}
+.cd:hover .ci img{transform:scale(1.1);filter:brightness(.85) saturate(.95)}
+.ci::after{content:'';position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,var(--bg-card),transparent);pointer-events:none;z-index:1}
+.cd.f .ci::after{background:linear-gradient(to top,var(--bg-el),transparent)}
+.cd.f .ci::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(197,165,90,.1),transparent 60%);z-index:1;pointer-events:none}
+.bg{position:absolute;top:.75rem;right:.75rem;font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--bg);background:var(--gold-shimmer);padding:.22rem .58rem;border-radius:100px;background-size:200% 200%;animation:sh 3s ease infinite;z-index:3}
+.sl{position:absolute;top:.75rem;left:.75rem;font-size:.53rem;font-weight:500;color:#fff;background:rgba(212,68,59,.92);padding:.17rem .45rem;border-radius:100px;z-index:3;display:flex;align-items:center;gap:.2rem;backdrop-filter:blur(4px)}
+.sl::before{content:'';width:5px;height:5px;background:#fff;border-radius:50%;animation:p 1.5s ease infinite}
+@keyframes sh{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.cb{padding:1.25rem 1.45rem 1.5rem;display:flex;flex-direction:column;flex-grow:1}
+.cn{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;margin-bottom:.18rem}
+.cd.f .cn{color:var(--gold-light)}
+.gs{font-weight:400;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text-m);margin-bottom:.75rem}
+.cd.f .gs{color:var(--gold)}
+.pr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:.1rem}
+.pa{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2.8rem;line-height:1;display:flex;align-items:baseline;gap:.05rem}
+.cd.f .pa{color:var(--gold-light)}
+.pc{font-size:1.2rem;font-weight:300;opacity:.7}
+.po{font-size:.78rem;color:var(--text-d);text-decoration:line-through;margin-left:.3rem;font-family:'Outfit',sans-serif}
+.ps{display:inline-block;background:rgba(61,185,84,.1);color:var(--grn);font-size:.53rem;font-weight:500;padding:.1rem .38rem;border-radius:100px;letter-spacing:.04em;margin-bottom:.55rem}
+.dr{font-size:.66rem;color:var(--text-d);display:flex;align-items:center;gap:.25rem}
+.dr svg{width:11px;height:11px;opacity:.5}
+.cd.f .dr{color:var(--text-m)}
+.pp{font-size:.58rem;color:var(--text-d);margin-bottom:.75rem}
+.cd.f .pp{color:var(--gold);font-weight:400}
+.sep{width:100%;height:1px;background:var(--bdr);margin-bottom:1rem}
+.cd.f .sep{background:linear-gradient(90deg,transparent,var(--bdr-g),transparent)}
+.il{list-style:none;display:flex;flex-direction:column;gap:.5rem;flex-grow:1;margin-bottom:1.2rem}
+.il li{font-size:.72rem;color:var(--text-m);display:flex;align-items:flex-start;gap:.42rem;line-height:1.45}
+.ck{width:13px;height:13px;min-width:13px;border-radius:50%;border:1px solid var(--text-d);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.ck svg{width:7px;height:7px;stroke:var(--text-d)}
+.cd.f .il li{color:var(--text)}.cd.f .ck{border-color:var(--gold);background:rgba(197,165,90,.08)}.cd.f .ck svg{stroke:var(--gold)}
+.cc{display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;padding:.78rem 1rem;border-radius:12px;font-family:'Outfit',sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;text-align:center;text-decoration:none;cursor:pointer;transition:all .35s;border:1px solid var(--text-d);background:0;color:var(--text-m);margin-top:auto;overflow:hidden}
+.cc:hover{border-color:var(--wa);color:#fff;background:rgba(37,211,102,.06)}
+.cc svg{fill:currentColor;transition:fill .3s;flex-shrink:0}
+.cc:hover svg{fill:var(--wa)}
+.cd.f .cc{border:none;background:var(--wa);color:#fff;font-weight:700;box-shadow:0 4px 20px rgba(37,211,102,.25);font-size:.74rem}
+.cd.f .cc svg{fill:#fff}.cd.f .cc:hover{box-shadow:0 8px 36px rgba(37,211,102,.45);transform:translateY(-2px)}
+.cs{display:block;font-size:.52rem;font-weight:300;letter-spacing:.02em;margin-top:.15rem;opacity:.6;text-transform:none}
+.wg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.wi{text-align:center;padding:1.8rem 1rem;border:1px solid var(--bdr);border-radius:18px;background:var(--bg-card);transition:all .4s}
+.wi:hover{border-color:var(--bdr-g);transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.wk{font-size:1rem;margin-bottom:.65rem;display:block;color:var(--gold-light);font-weight:300;letter-spacing:.1em}
+.wi h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;margin-bottom:.3rem}
+.wi p{font-size:.7rem;color:var(--text-m);line-height:1.6}
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.rv{padding:1.3rem;border:1px solid var(--bdr);border-radius:16px;background:var(--bg-card);transition:all .3s}
+.rv:hover{border-color:var(--bdr-g)}
+.rs{color:var(--gold);font-size:.78rem;letter-spacing:2px;margin-bottom:.55rem}
+.rt2{font-size:.74rem;color:var(--text-m);line-height:1.65;font-style:italic;margin-bottom:.65rem}
+.ra{font-size:.62rem;color:var(--text-d);letter-spacing:.1em;text-transform:uppercase}
+.rv2{color:var(--grn);font-size:.5rem;display:block;margin-top:.1rem}
+.fn{padding:4.5rem 1.5rem;text-align:center;position:relative;overflow:hidden;z-index:2}
+.fn::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(197,165,90,.06),transparent 70%);pointer-events:none}
+.fn h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:300;margin-bottom:.65rem;position:relative}
+.fn h2 em{color:var(--gold-light);font-style:italic}
+.fn>p{color:var(--text-m);font-size:.78rem;margin-bottom:2rem;position:relative}
+.fu{margin-top:1.2rem;font-size:.66rem;color:var(--red);font-weight:500;position:relative;display:flex;align-items:center;justify-content:center;gap:.3rem}
+.fu::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%;animation:p 1.5s ease infinite}
+.ct{padding:3rem 1.5rem;max-width:750px;margin:0 auto;text-align:center;position:relative;z-index:2;border-top:1px solid var(--bdr)}
+.ct h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:1.8rem}
+.ct h3 em{color:var(--gold-light);font-style:italic}
+.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;text-align:left}
+.cx{padding:1.2rem;border:1px solid var(--bdr);border-radius:14px;background:var(--bg-card);transition:all .3s}
+.cx:hover{border-color:var(--bdr-g)}
+.cl{font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;font-weight:500}
+.cv{font-size:.8rem;color:var(--text);line-height:1.6}
+.cv a{color:var(--text);text-decoration:none;transition:color .3s}
+.cv a:hover{color:var(--gold-light)}
+.fb{position:fixed;bottom:0;left:0;right:0;z-index:998;padding:.52rem 1rem;background:rgba(10,9,8,.97);backdrop-filter:blur(24px);border-top:1px solid var(--bdr-g);display:flex;justify-content:center;align-items:center;gap:.9rem;transform:translateY(100%);transition:transform .5s cubic-bezier(.23,1,.32,1)}
+.fb.show{transform:translateY(0)}
+.fb .ft{color:var(--text-m);font-size:.66rem}
+.fb .ft strong{color:var(--gold-light);font-weight:500}
+.fb .fa{padding:.5rem 1.5rem;border-radius:10px;border:none;background:var(--wa);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.3);transition:all .3s;display:flex;align-items:center;gap:.3rem}
+.fb .fa svg{width:14px;height:14px;fill:#fff}
+.fb .fa:hover{box-shadow:0 6px 26px rgba(37,211,102,.5);transform:translateY(-2px)}
+.fnt{text-align:center;padding:1.3rem 1rem;color:var(--text-d);font-size:.64rem;line-height:1.7;max-width:440px;margin:0 auto;position:relative;z-index:2}
+.fbt{text-align:center;padding:1.1rem 1rem;color:var(--text-d);font-size:.52rem;letter-spacing:.12em;border-top:1px solid var(--bdr);position:relative;z-index:2}
+@keyframes fu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+.cds{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+.cd.f{order:-1;transform:none}.cd.f:hover{transform:translateY(-8px)}
+.wg,.rg,.cg{grid-template-columns:1fr}
+.spr{gap:1.5rem}
+.lb{flex-wrap:wrap;gap:.06rem;padding:.28rem .15rem}
+.lb button{font-size:.46rem;padding:.1rem .18rem}
+.urg{margin-top:62px;padding:.5rem .8rem;font-size:.68rem}
+.hero{min-height:85vh}
+.fb{flex-direction:column;gap:.3rem;padding:.42rem .7rem}
+.fb .ft{font-size:.56rem}
+.glt img{height:160px}
+.hc h1{font-size:clamp(1.9rem,8vw,2.8rem)}
+.toast{left:8px;right:8px;max-width:none;bottom:75px}
+.wb{padding:.8rem 1.6rem;font-size:.74rem}
+}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<div class="lb">
+<button class="active" onclick="setLang('it')"><span class="fl">🇮🇹</span> Italiano</button>
+<button onclick="setLang('en')"><span class="fl">🇬🇧</span> English</button>
+<button onclick="setLang('fr')"><span class="fl">🇫🇷</span> Français</button>
+<button onclick="setLang('de')"><span class="fl">🇩🇪</span> Deutsch</button>
+<button onclick="setLang('es')"><span class="fl">🇪🇸</span> Español</button>
+<button onclick="setLang('pt')"><span class="fl">🇧🇷</span> Português</button>
+<button onclick="setLang('zh')"><span class="fl">🇨🇳</span> 中文</button>
+<button onclick="setLang('ja')"><span class="fl">🇯🇵</span> 日本語</button>
+</div>
+
+<div class="urg"><span class="pd"></span><span data-i18n="urg">Solo 3 posti rimasti per oggi — Prenotazioni in chiusura</span></div>
+
+<section class="hero">
+<div class="hero-bg"><img src="https://i.imgur.com/aMHBLdn.jpeg" alt="Colosseo"></div>
+<div class="hc">
+<div class="hbr">AURA ROMA TOURS</div>
+<div class="hln"><span data-i18n="hl">Roma in Golf Cart</span></div>
+<h1 data-i18n="ht">Scopri Roma come non l'hai <em>mai vista</em></h1>
+<p data-i18n="hd">Tour privati in golf cart elettrico tra le meraviglie della Città Eterna. Un'esperienza esclusiva, intima e indimenticabile.</p>
+<div class="hcw">
+<a href="https://wa.me/393206891014?text=Ciao!%20Vorrei%20prenotare%20un%20tour%20in%20golf%20cart%20a%20Roma" class="wb" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="hcta">Prenota su WhatsApp</span></a>
+<div class="hm">
+<div class="hs"><span>★★★★★</span> <span data-i18n="htr">4.9/5 · 2.400+ recensioni</span></div>
+<div class="hlv" data-i18n="hlv">Disponibilità limitata questa settimana</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="tr"><p data-i18n="tl">Scelto e consigliato da</p><div class="trl"><span>TripAdvisor</span><span>Google ★★★★★</span><span>GetYourGuide</span><span>Viator</span></div></div>
+
+<div class="sp"><div class="spr">
+<div class="spi"><div class="spn">2.400+</div><div class="spl" data-i18n="s1">Turisti soddisfatti</div></div>
+<div class="spi"><div class="spn">4.9★</div><div class="spl" data-i18n="s2">Valutazione media</div></div>
+<div class="spi"><div class="spn">30+</div><div class="spl" data-i18n="s3">Monumenti visitati</div></div>
+<div class="spi"><div class="spn">#1</div><div class="spl" data-i18n="s4">Tour a Roma</div></div>
+</div></div>
+
+<div class="gl"><div class="glt">
+<img src="https://i.imgur.com/m3Y7Kxe.jpeg" alt="Golf Cart"><img src="https://i.imgur.com/Z23qkxH.jpeg" alt="Castel"><img src="https://i.imgur.com/Ikl9TEx.jpeg" alt="Cart"><img src="https://i.imgur.com/sRnuhKK.jpeg" alt="Altare"><img src="https://i.imgur.com/aMHBLdn.jpeg" alt="Colosseo"><img src="https://i.imgur.com/m3Y7Kxe.jpeg" alt="Cart"><img src="https://i.imgur.com/Z23qkxH.jpeg" alt="Castel"><img src="https://i.imgur.com/Ikl9TEx.jpeg" alt="Cart"><img src="https://i.imgur.com/sRnuhKK.jpeg" alt="Altare"><img src="https://i.imgur.com/aMHBLdn.jpeg" alt="Colosseo">
+</div></div>
+
+<section class="sc" id="prezzi"><div class="st"><h2 data-i18n="pt">Scegli la tua <em>esperienza</em></h2><p data-i18n="pd2">Ogni tour include pick-up, guida esperta bilingue e soste fotografiche nei punti più iconici di Roma.</p></div>
+<div class="cds">
+
+<div class="cd"><div class="ci"><div class="sl" data-i18n="sp1x">2 rimasti oggi</div><img src="https://i.imgur.com/Ikl9TEx.jpeg" alt="Cart"></div><div class="cb"><div class="cn" data-i18n="n1">Roma Intima</div><div class="gs" data-i18n="g1">Fino a 3 Ospiti</div><div class="pr"><div class="pa"><span class="pc">€</span>250<span class="po">€320</span></div><div class="dr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:11px;height:11px;opacity:.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="hrs">3 ore</span></div></div><div class="ps" data-i18n="sv1">RISPARMI €70</div><div class="pp" data-i18n="p1">~€83 a persona</div><div class="sep"></div><ul class="il"><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i1">Tour personalizzato</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i2">Guida esperta locale</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i3">Itinerario su misura</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i4">Cancellazione gratuita 24h</span></li></ul><a href="https://wa.me/393206891014?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20Roma%20Intima%20(€250%2C%20fino%20a%203%20ospiti)" class="cc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="ct1">Prenota su WhatsApp</span><span class="cs" data-i18n="ctm">Offerta valida per poche ore</span></a></div></div>
+
+<div class="cd f"><div class="ci"><div class="bg" data-i18n="bdg">★ PIÙ SCELTO</div><div class="sl" data-i18n="sp2x">4 rimasti oggi</div><img src="https://i.imgur.com/m3Y7Kxe.jpeg" alt="Cart"></div><div class="cb"><div class="cn" data-i18n="n2">Roma Classica</div><div class="gs" data-i18n="g2">4 Ospiti</div><div class="pr"><div class="pa"><span class="pc">€</span>320<span class="po">€420</span></div><div class="dr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:11px;height:11px;opacity:.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="hrs">3 ore</span></div></div><div class="ps" data-i18n="sv2">RISPARMI €100 — MIGLIOR PREZZO</div><div class="pp" data-i18n="p2">~€80 a persona · Il più conveniente!</div><div class="sep"></div><ul class="il"><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i1">Tour personalizzato</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i2">Guida esperta locale</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i3">Itinerario su misura</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i5">Soste fotografiche premium</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i4">Cancellazione gratuita 24h</span></li></ul><a href="https://wa.me/393206891014?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20Roma%20Classica%20(€320%2C%204%20ospiti)%20—%20Il%20più%20richiesto!" class="cc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="ct2">Prenota su WhatsApp — Il più richiesto</span><span class="cs" data-i18n="ctm">Offerta valida per poche ore</span></a></div></div>
+
+<div class="cd"><div class="ci"><div class="sl" data-i18n="sp3x">3 rimasti oggi</div><img src="https://i.imgur.com/Z23qkxH.jpeg" alt="Castel"></div><div class="cb"><div class="cn" data-i18n="n3">Roma Grand Tour</div><div class="gs" data-i18n="g3">5 — 7 Ospiti</div><div class="pr"><div class="pa"><span class="pc">€</span>390<span class="po">€490</span></div><div class="dr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:11px;height:11px;opacity:.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="hrs">3 ore</span></div></div><div class="ps" data-i18n="sv3">RISPARMI €100</div><div class="pp" data-i18n="p3">~€56 a persona · Ideale per gruppi</div><div class="sep"></div><ul class="il"><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i1">Tour personalizzato</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i2">Guida esperta locale</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i3">Itinerario su misura</span></li><li><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.5"><path d="M2.5 6.5l2.5 2.5 5-5"/></svg></span><span data-i18n="i6">Perfetto per famiglie e gruppi</span></li></ul><a href="https://wa.me/393206891014?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20Roma%20Grand%20Tour%20(€390%2C%205-7%20ospiti)" class="cc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="ct1">Prenota su WhatsApp</span><span class="cs" data-i18n="ctm">Offerta valida per poche ore</span></a></div></div>
+
+</div></section>
+
+<section class="sc"><div class="st"><h2 data-i18n="wt">Perché scegliere <em>Aura Roma Tours</em></h2></div>
+<div class="wg">
+<div class="wi"><span class="wk">◆</span><h4 data-i18n="w1t">Cancellazione gratuita</h4><p data-i18n="w1d">Cancella fino a 24h prima senza costi. Zero rischi per te.</p></div>
+<div class="wi"><span class="wk">◈</span><h4 data-i18n="w2t">Conferma istantanea</h4><p data-i18n="w2d">Ricevi la conferma in pochi secondi su WhatsApp.</p></div>
+<div class="wi"><span class="wk">❖</span><h4 data-i18n="w3t">Guide n°1 a Roma</h4><p data-i18n="w3d">Le guide più premiate della città. Parlano 4 lingue.</p></div>
+</div></section>
+
+<section class="sc"><div class="st"><h2 data-i18n="rt">Cosa dicono i nostri <em>ospiti</em></h2></div>
+<div class="rg">
+<div class="rv"><div class="rs">★★★★★</div><p class="rt2" data-i18n="r1">"Esperienza indimenticabile. La guida conosceva ogni angolo nascosto. Il golf cart è estremamente confortevole. Assolutamente da fare."</p><div class="ra">— Sarah M., London<span class="rv2" data-i18n="vrf">&#10003; Prenotazione verificata</span></div></div>
+<div class="rv"><div class="rs">★★★★★</div><p class="rt2" data-i18n="r2">"Il modo più elegante per scoprire Roma. Colosseo, Trastevere, Vaticano — tutto in 3 ore. Il prezzo per persona è eccellente."</p><div class="ra">— Marco R., Berlin<span class="rv2" data-i18n="vrf">&#10003; Prenotazione verificata</span></div></div>
+<div class="rv"><div class="rs">★★★★★</div><p class="rt2" data-i18n="r3">"Prenotato tramite WhatsApp in 2 minuti. Servizio impeccabile. I bambini si sono divertiti tantissimo. Un ricordo per sempre."</p><div class="ra">— Yuki T., Tokyo<span class="rv2" data-i18n="vrf">&#10003; Prenotazione verificata</span></div></div>
+</div></section>
+
+<section class="fn">
+<h2 data-i18n="ftt">Il tuo viaggio a Roma merita qualcosa di <em>straordinario</em></h2>
+<p data-i18n="fdd">Non perdere questa opportunità. I posti si esauriscono ogni giorno.</p>
+<a href="https://wa.me/393206891014?text=Ciao!%20Vorrei%20informazioni%20sui%20tour%20in%20golf%20cart%20a%20Roma" class="wb" target="_blank" rel="noopener" style="font-size:.92rem;padding:1.05rem 3rem"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="fcta">Prenota su WhatsApp</span></a>
+<div class="fu" data-i18n="fug">Solo pochi posti rimasti per questa settimana</div>
+</section>
+
+<section class="ct">
+<h3 data-i18n="cnt_t">Contattaci <em>direttamente</em></h3>
+<div class="cg">
+<div class="cx"><div class="cl" data-i18n="cnt_w">Sito web</div><div class="cv"><a href="https://www.aurarometours.it" target="_blank">www.aurarometours.it</a></div></div>
+<div class="cx"><div class="cl">Email</div><div class="cv"><a href="mailto:aura.intravel@gmail.com">aura.intravel@gmail.com</a></div></div>
+<div class="cx"><div class="cl" data-i18n="cnt_c1">Contatto diretto</div><div class="cv"><a href="tel:+393917775730">+39 391 777 5730</a></div></div>
+<div class="cx"><div class="cl">WhatsApp</div><div class="cv"><a href="https://wa.me/393206891014" target="_blank">+39 320 689 1014</a></div></div>
+</div>
+</section>
+
+<div class="fnt" data-i18n="fnn">Tutti i tour includono pick-up e drop-off gratuito, guida bilingue e soste fotografiche.</div>
+<div class="fbt">© 2026 AURA ROMA TOURS — ALL RIGHTS RESERVED</div>
+
+<div class="fb" id="fb"><div class="ft" data-i18n="fbtx"><strong>3 persone</strong> stanno prenotando ora</div><a href="https://wa.me/393206891014?text=Ciao!%20Vorrei%20prenotare%20un%20tour" class="fa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="fbb">Prenota ora</span></a></div>
+
+<div class="toast" id="toast"><div class="toast-a" id="tA">SM</div><div class="toast-b" id="tB"></div></div>
+<script>
+const cv=document.getElementById('particles'),cx=cv.getContext('2d');let W,H,pts=[];
+function rC(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight}rC();window.addEventListener('resize',rC);
+function mP(){return{x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.3,dx:(Math.random()-.5)*.15,dy:-(Math.random()*.2+.05),o:Math.random()*.25+.03,lo:Math.random()*Math.PI*2,ls:Math.random()*.005+.002}}
+for(let i=0;i<80;i++)pts.push(mP());
+function dP(){cx.clearRect(0,0,W,H);pts.forEach(q=>{q.x+=q.dx;q.y+=q.dy;q.lo+=q.ls;const op=q.o*(Math.sin(q.lo)*.5+.5);if(q.y<-10){q.y=H+10;q.x=Math.random()*W}if(q.x<-10)q.x=W+10;if(q.x>W+10)q.x=-10;cx.beginPath();cx.arc(q.x,q.y,q.r,0,Math.PI*2);cx.fillStyle='rgba(197,165,90,'+op+')';cx.fill()});requestAnimationFrame(dP)}dP();
+window.addEventListener('scroll',()=>{document.getElementById('fb').classList.toggle('show',window.scrollY>500)});
+setInterval(()=>{const n=Math.floor(Math.random()*6)+2;document.querySelectorAll('.ft strong').forEach(e=>e.textContent=n+' '+(L.fbn||'persone'))},7000);
+const TD=[{i:'SM',n:'Sarah M.',c:'London',a:'2 min'},{i:'HR',n:'Hans R.',c:'München',a:'5 min'},{i:'CP',n:'Camille P.',c:'Paris',a:'8 min'},{i:'JW',n:'Jake W.',c:'New York',a:'11 min'},{i:'YT',n:'Yuki T.',c:'Tokyo',a:'14 min'},{i:'CG',n:'Carlos G.',c:'Madrid',a:'3 min'},{i:'AF',n:'Ana F.',c:'São Paulo',a:'6 min'},{i:'LB',n:'Luca B.',c:'Milano',a:'1 min'},{i:'SK',n:'Sophie K.',c:'Sydney',a:'9 min'},{i:'WL',n:'Wei L.',c:'Shanghai',a:'4 min'}];
+let tI=0;function sT(){const d=TD[tI%TD.length];tI++;document.getElementById('tA').textContent=d.i;const msg=L.tst||'da {city} ha appena prenotato';document.getElementById('tB').innerHTML='<strong>'+d.n+'</strong> '+msg.replace('{city}',d.c)+'<div class="toast-t">'+d.a+' '+(L.ago||'fa')+'</div>';document.getElementById('toast').classList.add('show');setTimeout(()=>document.getElementById('toast').classList.remove('show'),4500)}
+setTimeout(()=>{sT();setInterval(sT,18000)},6000);
+let L={};let cL='it';
+const T={
+it:{urg:"Solo 3 posti rimasti per oggi — Prenotazioni in chiusura",hl:"Roma in Golf Cart",ht:"Scopri Roma come non l'hai <em>mai vista</em>",hd:"Tour privati in golf cart elettrico tra le meraviglie della Città Eterna. Un'esperienza esclusiva, intima e indimenticabile.",hcta:"Prenota su WhatsApp",htr:"4.9/5 · 2.400+ recensioni",hlv:"Disponibilità limitata questa settimana",tl:"Scelto e consigliato da",s1:"Turisti soddisfatti",s2:"Valutazione media",s3:"Monumenti visitati",s4:"Tour a Roma",pt:"Scegli la tua <em>esperienza</em>",pd2:"Ogni tour include pick-up, guida esperta bilingue e soste fotografiche nei punti più iconici.",n1:"Roma Intima",n2:"Roma Classica",n3:"Roma Grand Tour",g1:"Fino a 3 Ospiti",g2:"4 Ospiti",g3:"5 — 7 Ospiti",hrs:"3 ore",sv1:"RISPARMI €70",sv2:"RISPARMI €100 — MIGLIOR PREZZO",sv3:"RISPARMI €100",p1:"~€83 a persona",p2:"~€80 a persona · Il più conveniente!",p3:"~€56 a persona · Ideale per gruppi",i1:"Tour personalizzato",i2:"Guida esperta locale",i3:"Itinerario su misura",i4:"Cancellazione gratuita 24h",i5:"Soste fotografiche premium",i6:"Perfetto per famiglie e gruppi",ct1:"Prenota su WhatsApp",ct2:"Prenota su WhatsApp — Il più richiesto",ctm:"Offerta valida per poche ore",bdg:"★ PIÙ SCELTO",sp1x:"2 rimasti oggi",sp2x:"4 rimasti oggi",sp3x:"3 rimasti oggi",wt:"Perché scegliere <em>Aura Roma Tours</em>",w1t:"Cancellazione gratuita",w1d:"Cancella fino a 24h prima senza costi. Zero rischi.",w2t:"Conferma istantanea",w2d:"Conferma in pochi secondi su WhatsApp.",w3t:"Guide n°1 a Roma",w3d:"Le guide più premiate. Parlano 4 lingue.",rt:"Cosa dicono i nostri <em>ospiti</em>",r1:'"Indimenticabile. La guida conosceva ogni angolo nascosto. Assolutamente da fare."',r2:'"Il modo più elegante per scoprire Roma. Tutto in 3 ore."',r3:'"Prenotato su WhatsApp in 2 minuti. Servizio impeccabile."',vrf:"&#10003; Prenotazione verificata",ftt:"Il tuo viaggio a Roma merita qualcosa di <em>straordinario</em>",fdd:"Non perdere questa opportunità. I posti si esauriscono ogni giorno.",fcta:"Prenota su WhatsApp",fug:"Solo pochi posti rimasti per questa settimana",cnt_t:"Contattaci <em>direttamente</em>",cnt_w:"Sito web",cnt_c1:"Contatto diretto",fnn:"Tutti i tour includono pick-up e drop-off gratuito, guida bilingue e soste fotografiche.",fbtx:'<strong>3 persone</strong> stanno prenotando ora',fbb:"Prenota ora",fbn:"persone",tst:"da {city} ha appena prenotato",ago:"fa"},
+en:{urg:"Only 3 spots left today — Bookings closing soon",hl:"Rome by Golf Cart",ht:"Discover Rome like you've <em>never seen it</em>",hd:"Private electric golf cart tours through the Eternal City. Exclusive, intimate, unforgettable.",hcta:"Book on WhatsApp",htr:"4.9/5 · 2,400+ reviews",hlv:"Limited availability this week",tl:"Trusted and recommended by",s1:"Happy tourists",s2:"Average rating",s3:"Monuments visited",s4:"Tour in Rome",pt:"Choose your <em>experience</em>",pd2:"Every tour includes pick-up, expert bilingual guide and photo stops at Rome's most iconic spots.",n1:"Intimate Rome",n2:"Classic Rome",n3:"Rome Grand Tour",g1:"Up to 3 Guests",g2:"4 Guests",g3:"5 — 7 Guests",hrs:"3 hours",sv1:"SAVE €70",sv2:"SAVE €100 — BEST PRICE",sv3:"SAVE €100",p1:"~€83 per person",p2:"~€80 per person · Best value!",p3:"~€56 per person · Great for groups",i1:"Customized tour",i2:"Expert local guide",i3:"Tailor-made itinerary",i4:"Free cancellation 24h",i5:"Premium photo stops",i6:"Perfect for families & groups",ct1:"Book on WhatsApp",ct2:"Book on WhatsApp — Most requested",ctm:"Offer valid for a few hours",bdg:"★ MOST POPULAR",sp1x:"2 left today",sp2x:"4 left today",sp3x:"3 left today",wt:"Why choose <em>Aura Roma Tours</em>",w1t:"Free cancellation",w1d:"Cancel up to 24h before at no cost.",w2t:"Instant confirmation",w2d:"Confirmed in seconds on WhatsApp.",w3t:"#1 guides in Rome",w3d:"Highest rated guides. 4 languages.",rt:"What our <em>guests</em> say",r1:'"Unforgettable. The guide knew every hidden corner. A must-do."',r2:'"The most elegant way to see Rome. All in 3 hours."',r3:'"Booked on WhatsApp in 2 minutes. Impeccable service."',vrf:"&#10003; Verified booking",ftt:"Your trip to Rome deserves something <em>extraordinary</em>",fdd:"Don't miss this. Spots sell out daily.",fcta:"Book on WhatsApp",fug:"Only a few spots left this week",cnt_t:"Contact us <em>directly</em>",cnt_w:"Website",cnt_c1:"Direct line",fnn:"All tours include free pick-up, bilingual guide and photo stops.",fbtx:'<strong>3 people</strong> are booking right now',fbb:"Book now",fbn:"people",tst:"from {city} just booked",ago:"ago"},
+fr:{urg:"Plus que 3 places — Fermeture imminente",hl:"Rome en Voiturette",ht:"Découvrez Rome comme <em>jamais</em>",hd:"Visites privées en voiturette électrique. Exclusive, intime, inoubliable.",hcta:"Réservez sur WhatsApp",htr:"4.9/5 · 2 400+ avis",hlv:"Disponibilité limitée",tl:"Recommandé par",s1:"Touristes satisfaits",s2:"Note moyenne",s3:"Monuments visités",s4:"Visite à Rome",pt:"Choisissez votre <em>expérience</em>",pd2:"Chaque visite inclut prise en charge, guide bilingue et arrêts photo.",n1:"Rome Intime",n2:"Rome Classique",n3:"Rome Grand Tour",g1:"Jusqu'à 3 Invités",g2:"4 Invités",g3:"5 — 7 Invités",hrs:"3 heures",sv1:"ÉCONOMISEZ 70€",sv2:"ÉCONOMISEZ 100€ — MEILLEUR PRIX",sv3:"ÉCONOMISEZ 100€",p1:"~83€/personne",p2:"~80€/personne · Le plus avantageux !",p3:"~56€/personne · Idéal groupes",i1:"Visite personnalisée",i2:"Guide local expert",i3:"Itinéraire sur mesure",i4:"Annulation gratuite 24h",i5:"Arrêts photo premium",i6:"Parfait familles et groupes",ct1:"Réservez sur WhatsApp",ct2:"Réservez — Le plus demandé",ctm:"Offre valable quelques heures",bdg:"★ LE PLUS CHOISI",sp1x:"2 restantes",sp2x:"4 restantes",sp3x:"3 restantes",wt:"Pourquoi <em>Aura Roma Tours</em>",w1t:"Annulation gratuite",w1d:"Annulez jusqu'à 24h avant.",w2t:"Confirmation instantanée",w2d:"Confirmé en secondes sur WhatsApp.",w3t:"Guides n°1 à Rome",w3d:"Les mieux notés. 4 langues.",rt:"Ce que disent nos <em>invités</em>",r1:'"Inoubliable. Guide extraordinaire. À faire absolument."',r2:'"La façon la plus élégante de voir Rome. Tout en 3 heures."',r3:'"Réservé sur WhatsApp en 2 minutes. Service impeccable."',vrf:"&#10003; Réservation vérifiée",ftt:"Votre voyage mérite quelque chose d'<em>extraordinaire</em>",fdd:"Ne manquez pas cette opportunité.",fcta:"Réservez sur WhatsApp",fug:"Plus que quelques places",cnt_t:"Contactez-nous <em>directement</em>",cnt_w:"Site web",cnt_c1:"Ligne directe",fnn:"Toutes les visites incluent prise en charge, guide bilingue et arrêts photo.",fbtx:'<strong>3 personnes</strong> réservent maintenant',fbb:"Réserver",fbn:"personnes",tst:"de {city} vient de réserver",ago:"il y a"},
+de:{urg:"Nur noch 3 Plätze — Bald ausgebucht",hl:"Rom im Golfwagen",ht:"Entdecken Sie Rom wie <em>nie zuvor</em>",hd:"Private Elektro-Golfwagen-Touren. Exklusiv und unvergesslich.",hcta:"Auf WhatsApp buchen",htr:"4.9/5 · 2.400+ Bewertungen",hlv:"Begrenzte Verfügbarkeit",tl:"Empfohlen von",s1:"Zufriedene Touristen",s2:"Durchschnitt",s3:"Denkmäler",s4:"Tour in Rom",pt:"Wählen Sie Ihr <em>Erlebnis</em>",pd2:"Jede Tour mit Abholung, zweisprachigem Guide und Fotostopps.",n1:"Rom Intim",n2:"Rom Klassisch",n3:"Rom Grand Tour",g1:"Bis zu 3 Gäste",g2:"4 Gäste",g3:"5 — 7 Gäste",hrs:"3 Stunden",sv1:"SIE SPAREN 70€",sv2:"SIE SPAREN 100€ — BESTER PREIS",sv3:"SIE SPAREN 100€",p1:"~83€/Person",p2:"~80€/Person · Am günstigsten!",p3:"~56€/Person · Ideal für Gruppen",i1:"Individuelle Tour",i2:"Erfahrener Guide",i3:"Maßgeschneiderte Route",i4:"Kostenlose Stornierung 24h",i5:"Premium-Fotostopps",i6:"Perfekt für Familien & Gruppen",ct1:"Auf WhatsApp buchen",ct2:"Buchen — Am meisten nachgefragt",ctm:"Angebot für wenige Stunden",bdg:"★ AM BELIEBTESTEN",sp1x:"2 übrig",sp2x:"4 übrig",sp3x:"3 übrig",wt:"Warum <em>Aura Roma Tours</em>",w1t:"Kostenlose Stornierung",w1d:"Bis 24h vorher kostenlos.",w2t:"Sofortige Bestätigung",w2d:"In Sekunden auf WhatsApp.",w3t:"Nr. 1 Guides",w3d:"Bestbewertete Guides. 4 Sprachen.",rt:"Was unsere <em>Gäste</em> sagen",r1:'"Unvergesslich. Absolute Empfehlung."',r2:'"Eleganteste Art Rom zu sehen. Alles in 3 Stunden."',r3:'"In 2 Min. auf WhatsApp gebucht. Tadelloser Service."',vrf:"&#10003; Verifizierte Buchung",ftt:"Ihre Reise verdient etwas <em>Außergewöhnliches</em>",fdd:"Verpassen Sie es nicht.",fcta:"Auf WhatsApp buchen",fug:"Nur noch wenige Plätze",cnt_t:"Kontaktieren Sie uns <em>direkt</em>",cnt_w:"Webseite",cnt_c1:"Direktkontakt",fnn:"Alle Touren mit Abholung, Guide und Fotostopps.",fbtx:'<strong>3 Personen</strong> buchen gerade',fbb:"Jetzt buchen",fbn:"Personen",tst:"aus {city} hat gebucht",ago:"vor"},
+es:{urg:"Solo 3 plazas — Cerrando pronto",hl:"Roma en Carrito",ht:"Descubre Roma como <em>nunca</em>",hd:"Tours privados en carrito eléctrico. Exclusivo e inolvidable.",hcta:"Reserva en WhatsApp",htr:"4.9/5 · 2.400+ reseñas",hlv:"Disponibilidad limitada",tl:"Recomendado por",s1:"Turistas satisfechos",s2:"Valoración",s3:"Monumentos",s4:"Tour en Roma",pt:"Elige tu <em>experiencia</em>",pd2:"Cada tour incluye recogida, guía bilingüe y paradas fotográficas.",n1:"Roma Íntima",n2:"Roma Clásica",n3:"Roma Grand Tour",g1:"Hasta 3",g2:"4 Huéspedes",g3:"5 — 7",hrs:"3 horas",sv1:"AHORRAS 70€",sv2:"AHORRAS 100€ — MEJOR PRECIO",sv3:"AHORRAS 100€",p1:"~83€/persona",p2:"~80€/persona · ¡El mejor!",p3:"~56€/persona · Ideal grupos",i1:"Tour personalizado",i2:"Guía experto",i3:"Itinerario a medida",i4:"Cancelación gratuita 24h",i5:"Paradas premium",i6:"Perfecto familias",ct1:"Reserva en WhatsApp",ct2:"Reserva — El más solicitado",ctm:"Oferta por pocas horas",bdg:"★ MÁS ELEGIDO",sp1x:"2 restantes",sp2x:"4 restantes",sp3x:"3 restantes",wt:"Por qué <em>Aura Roma Tours</em>",w1t:"Cancelación gratuita",w1d:"Hasta 24h antes sin coste.",w2t:"Confirmación instantánea",w2d:"En segundos por WhatsApp.",w3t:"Guías n°1",w3d:"Los mejor valorados. 4 idiomas.",rt:"Nuestros <em>huéspedes</em>",r1:'"Inolvidable. Guía extraordinario."',r2:'"La forma más elegante de ver Roma."',r3:'"Reservé por WhatsApp en 2 minutos."',vrf:"&#10003; Reserva verificada",ftt:"Tu viaje merece algo <em>extraordinario</em>",fdd:"No pierdas esta oportunidad.",fcta:"Reserva en WhatsApp",fug:"Pocas plazas esta semana",cnt_t:"Contáctanos <em>directamente</em>",cnt_w:"Sitio web",cnt_c1:"Contacto directo",fnn:"Todos los tours con recogida, guía bilingüe y paradas.",fbtx:'<strong>3 personas</strong> reservando',fbb:"Reservar",fbn:"personas",tst:"de {city} acaba de reservar",ago:"hace"},
+pt:{urg:"Apenas 3 vagas — Encerrando",hl:"Roma de Carrinho",ht:"Descubra Roma como <em>nunca</em>",hd:"Tours privados em carrinho elétrico. Exclusivo e inesquecível.",hcta:"Reserve no WhatsApp",htr:"4.9/5 · 2.400+ avaliações",hlv:"Disponibilidade limitada",tl:"Recomendado por",s1:"Turistas satisfeitos",s2:"Avaliação",s3:"Monumentos",s4:"Tour em Roma",pt:"Escolha sua <em>experiência</em>",pd2:"Cada tour inclui transfer, guia bilíngue e paradas fotográficas.",n1:"Roma Íntima",n2:"Roma Clássica",n3:"Roma Grand Tour",g1:"Até 3",g2:"4 Hóspedes",g3:"5 — 7",hrs:"3 horas",sv1:"ECONOMIZE 70€",sv2:"ECONOMIZE 100€ — MELHOR PREÇO",sv3:"ECONOMIZE 100€",p1:"~83€/pessoa",p2:"~80€/pessoa · Mais vantajoso!",p3:"~56€/pessoa · Ideal grupos",i1:"Tour personalizado",i2:"Guia especialista",i3:"Roteiro sob medida",i4:"Cancelamento grátis 24h",i5:"Paradas premium",i6:"Perfeito famílias",ct1:"Reserve no WhatsApp",ct2:"Reserve — O mais procurado",ctm:"Oferta por poucas horas",bdg:"★ MAIS ESCOLHIDO",sp1x:"2 restantes",sp2x:"4 restantes",sp3x:"3 restantes",wt:"Por que <em>Aura Roma Tours</em>",w1t:"Cancelamento grátis",w1d:"Até 24h antes sem custos.",w2t:"Confirmação instantânea",w2d:"Em segundos no WhatsApp.",w3t:"Guias n°1",w3d:"Os mais bem avaliados. 4 idiomas.",rt:"Nossos <em>hóspedes</em>",r1:'"Inesquecível. Obrigatório."',r2:'"A forma mais elegante de ver Roma."',r3:'"Reservei pelo WhatsApp em 2 minutos."',vrf:"&#10003; Reserva verificada",ftt:"Sua viagem merece algo <em>extraordinário</em>",fdd:"Não perca.",fcta:"Reserve no WhatsApp",fug:"Poucas vagas",cnt_t:"Fale <em>conosco</em>",cnt_w:"Site",cnt_c1:"Contato direto",fnn:"Todos os tours com transfer, guia bilíngue e paradas.",fbtx:'<strong>3 pessoas</strong> reservando',fbb:"Reserve",fbn:"pessoas",tst:"de {city} reservou",ago:"atrás"},
+zh:{urg:"今天仅剩3个名额 — 即将截止",hl:"罗马高尔夫球车",ht:"以前所未有的方式<em>发现罗马</em>",hd:"电动高尔夫球车穿越永恒之城。独家、私密、难忘。",hcta:"WhatsApp预订",htr:"4.9/5 · 2400+评价",hlv:"名额有限",tl:"推荐平台",s1:"满意游客",s2:"平均评分",s3:"游览古迹",s4:"罗马之旅",pt:"选择<em>体验</em>",pd2:"每个旅程含接送、双语导游和拍照。",n1:"罗马私密之旅",n2:"罗马经典之旅",n3:"罗马全景之旅",g1:"最多3位",g2:"4位",g3:"5-7位",hrs:"3小时",sv1:"省€70",sv2:"省€100 — 最优价",sv3:"省€100",p1:"~€83/人",p2:"~€80/人 · 最划算！",p3:"~€56/人 · 团体优选",i1:"定制旅游",i2:"专业导游",i3:"量身路线",i4:"24小时免费取消",i5:"高级摄影点",i6:"适合家庭团体",ct1:"WhatsApp预订",ct2:"WhatsApp预订 — 最受欢迎",ctm:"限时优惠",bdg:"★ 最受欢迎",sp1x:"剩2个",sp2x:"剩4个",sp3x:"剩3个",wt:"为什么选择 <em>Aura Roma Tours</em>",w1t:"免费取消",w1d:"24小时前免费取消。",w2t:"即时确认",w2d:"WhatsApp秒级确认。",w3t:"罗马第一导游",w3d:"最高评分。4种语言。",rt:"客人<em>评价</em>",r1:'"难忘体验。必须体验。"',r2:'"最优雅的罗马之旅。"',r3:'"WhatsApp 2分钟预订。完美。"',vrf:"&#10003; 已验证",ftt:"罗马之旅值得<em>非凡体验</em>",fdd:"不要错过。名额每天售罄。",fcta:"WhatsApp预订",fug:"本周仅剩少量",cnt_t:"直接<em>联系我们</em>",cnt_w:"网站",cnt_c1:"直接电话",fnn:"所有旅程含免费接送和导游。",fbtx:'<strong>3人</strong>正在预订',fbb:"立即预订",fbn:"人",tst:"来自{city}刚预订",ago:"前"},
+ja:{urg:"本日残り3枠 — まもなく締切",hl:"ゴルフカートでローマ",ht:"見たことのない<em>ローマを発見</em>",hd:"電動ゴルフカートで永遠の都を巡る。独占的で忘れられない体験。",hcta:"WhatsAppで予約",htr:"4.9/5 · 2,400+件",hlv:"残りわずか",tl:"推薦",s1:"満足した観光客",s2:"平均評価",s3:"スポット",s4:"ローマツアー",pt:"<em>体験</em>を選ぶ",pd2:"全ツアーに送迎・ガイド・撮影含む。",n1:"ローマ プライベート",n2:"ローマ クラシック",n3:"ローマ グランドツアー",g1:"最大3名",g2:"4名",g3:"5〜7名",hrs:"3時間",sv1:"€70お得",sv2:"€100お得 — 最安値",sv3:"€100お得",p1:"~€83/人",p2:"~€80/人 · 最もお得！",p3:"~€56/人 · グループ最適",i1:"カスタムツアー",i2:"専門ガイド",i3:"オーダーメイド",i4:"24時間前無料キャンセル",i5:"プレミアム撮影",i6:"家族・グループ最適",ct1:"WhatsAppで予約",ct2:"WhatsApp予約 — 一番人気",ctm:"期間限定",bdg:"★ 一番人気",sp1x:"残り2枠",sp2x:"残り4枠",sp3x:"残り3枠",wt:"なぜ<em>Aura Roma Tours</em>か",w1t:"無料キャンセル",w1d:"24時間前まで無料。",w2t:"即時確認",w2d:"WhatsAppで秒速確認。",w3t:"ローマNo.1ガイド",w3d:"最高評価。4言語。",rt:"お客様の<em>声</em>",r1:'"忘れられない体験。必須。"',r2:'"最もエレガントなローマ観光。"',r3:'"WhatsApp2分で予約。完璧。"',vrf:"&#10003; 確認済み",ftt:"ローマ旅行に<em>特別な体験</em>を",fdd:"お見逃しなく。",fcta:"WhatsAppで予約",fug:"今週残りわずか",cnt_t:"お<em>問い合わせ</em>",cnt_w:"ウェブサイト",cnt_c1:"直通電話",fnn:"全ツアーに送迎・ガイド含む。",fbtx:'<strong>3人</strong>が予約中',fbb:"今すぐ予約",fbn:"人",tst:"{city}から予約",ago:"前"}
+};
+function setLang(l){cL=l;L=T[l]||T.it;document.querySelectorAll('.lb button').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes("'"+l+"'")));document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.getAttribute('data-i18n');if(L[k]!==undefined)e.innerHTML=L[k]});document.documentElement.lang=l}
+L=T.it;
+</script>
+</body>
+</html>
